@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md. Kouser Sarkar – Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family: "Google Sans Flex", sans-serif;
+    background:#e9e9e9;
+    color:#222;
+    padding:40px 16px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .page{
+    background:#fff;
+    width:780px;
+    max-width:100%;
+    padding:50px 60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+  }
+
+  /* Header */
+  header{
+    padding-bottom:14px;
+    margin-bottom:24px;
+  }
+
+  /* Two column grid for lower sections */
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  header .name{
+    text-align: left;
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding: 0 15px;
+  }
+
+  header h1{
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight:600;
+    font-size:30px;
+    letter-spacing:1px;
+    margin-bottom:6px;
+  }
+
+  header .image{
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+  }
+  
+  header img{
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid #2f5597;
+  }
+  .contact-line{
+    font-size:13px;
+    color:#444;
+    display:flex;
+    justify-content:left;
+    gap:5px;
+    flex-wrap:wrap;
+  }
+  .contact-line span{display:inline-flex; align-items:center; gap:5px;}
+
+  /* Section */
+  section{margin-bottom:22px;}
+  .section-title{
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight:700;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    border-bottom:1px solid #999;
+    padding-bottom:4px;
+    margin-bottom:15px;
+    color:#111;
+  }
+
+  .summary{
+    font-size:13.5px;
+    line-height:1.8;
+    color:#333;
+    text-align:justify;
+  }
+
+  /* Experience / Education entries */
+  .entry{margin-bottom:14px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:4px;
+  }
+  .entry-title{
+    font-size:14.5px;
+    font-weight:700;
+    color:#111;
+  }
+  .entry-org{
+    font-size:13px;
+    font-style:italic;
+    color:#555;
+  }
+  .entry-date{
+    font-size:12.5px;
+    font-weight:600;
+    color:#666;
+    white-space:nowrap;
+  }
+  .entry ul{
+    list-style:none;
+    margin-top:6px;
+    padding-left:2px;
+  }
+  .entry ul li{
+    font-size:13px;
+    line-height:1.75;
+    color:#333;
+    padding-left:16px;
+    position:relative;
+  }
+  .entry ul li::before{
+    content:'▪';
+    position:absolute;
+    left:0;
+    color:#111;
+    font-size:10px;
+    top:3px;
+  }
+
+  /* Education specific */
+  .edu-entry{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+    gap:4px;
+  }
+  .edu-entry:last-child{margin-bottom:0;}
+  .edu-left .edu-degree{
+    font-size:14px;
+    font-weight:700;
+    color:#111;
+  }
+  .edu-left .edu-school{
+    font-size:12.5px;
+    color:#555;
+    font-style:italic;
+  }
+  .edu-right{
+    font-size:12.5px;
+    color:#666;
+    font-weight:600;
+    text-align:right;
+    white-space:nowrap;
+  }
+
+ 
+  
+  @media (max-width:600px){
+        .page{padding:32px 24px;}
+  }
+
+  .plain-list{
+    list-style:none;
+  }
+  .plain-list li{
+    font-size:13px;
+    line-height:1.75;
+    color:#333;
+    padding-left:16px;
+    position:relative;
+    margin-bottom:2px;
+  }
+  .plain-list li::before{
+    content:'▪';
+    position:absolute;
+    left:0;
+    color:#111;
+    font-size:10px;
+    top:3px;
+  }
+  .plain-list li b{color:#111;}
+
+  /* Personal details */
+  .personal-grid{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    row-gap:6px;
+    font-size:13px;
+  }
+  .personal-grid dt{font-weight:700; color:#111;}
+  .personal-grid dd{color:#333;}
+
+  /* Signature */
+  .signature{
+    margin-top:40px;
+    text-align:right;
+  }
+  .signature .sig-name{
+    font-family: "Google Sans Flex", sans-serif;
+    font-style:italic;
+    font-size:26px;
+    color:#222;
+    margin-bottom:2px;
+  }.signature .sig-name img{
+    max-width: 120px;
+  }
+  .signature .sig-line{
+    width:160px;
+    border-top:1px solid #333;
+    margin:4px 0 4px auto;
+  }
+  .signature .sig-label{
+    font-size:12px;
+    color:#666;
+    letter-spacing:1px;
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .page{box-shadow:none; width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="row">
+
+      <div class="name">
+        <h1>MD. KOUSER SARKAR</h1>
+        <div class="contact-line">
+          <span>📞 +880 1750 880 802, +880 1580 636 383</span>
+          <span>✉️ kousersarkar@gmail.com</span>
+          <span>📍 Fulbari Uttar Para Bogra Sadar, Bogura-5800, Bangladesh</span>
+        </div>
+      </div>
+
+      <div class="image">
+        <img src="kouser.jpeg">
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- Professional Summary -->
+  <section>
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+      I am an IT Officer with hands-on experience in ERP software implementation, specializing in Sales,
+      Inventory, and Accounts modules. Skilled in managing business operations through ERP systems,
+      ensuring accurate data handling, efficient workflows, and reliable reporting. Combines Accounting
+      knowledge (BBA) with technical expertise to optimize business processes.
+    </p>
+  </section>
+
+  <!-- Professional Experience -->
+  <section>
+    <div class="section-title">Professional Experience</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">IT Officer (ERP &amp; Accounts Systems)</div>
+          <div class="entry-org">Akboria Group Limited</div>
+        </div>
+        <div class="entry-date">Oct 2021 – Present</div>
+      </div>
+      <ul>
+        <li>Implement and maintain ERP systems for Sales, Inventory, and Accounts.</li>
+        <li>Led initiatives in Accounts and enterprise software development.</li>
+        <li>Manage daily transactions ensuring data accuracy.</li>
+        <li>Generate reports for business decision-making.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Computer Trainer (Basic)</div>
+          <div class="entry-org">RHYTHM IT &amp; Freelancing Institute</div>
+        </div>
+        <div class="entry-date">May 2022 – Oct 2024</div>
+      </div>
+      <ul>
+        <li>Conduct and manage training sessions on basic computer applications.</li>
+        <li>Manage daily student assessments and practical lab exams ensuring accurate progress tracking.</li>
+        <li>Generate student performance reports and feedback for academic decision-making.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div class="section-title">Education</div>
+
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">B.B.A. in Accounting</div>
+        <div class="edu-school">National University of Bangladesh</div>
+      </div>
+      <div class="edu-right">2021 &nbsp;|&nbsp; CGPA: 2.44</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+        <div class="edu-school">Govt. Shah Sultan College, Bogura</div>
+      </div>
+      <div class="edu-right">2016 &nbsp;|&nbsp; GPA: 4.08</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">Secondary School Certificate (SSC)</div>
+        <div class="edu-school">Matidali High School, Bogura</div>
+      </div>
+      <div class="edu-right">2013 &nbsp;|&nbsp; GPA: 3.88</div>
+    </div>
+  </section>
+
+  <!-- Technical Skills & Specializations -->
+  <section>
+    <div>
+      <div class="section-title">Technical Skills</div>
+      <ul class="plain-list">
+        <li>ERP Software Implementation &amp; Support</li>
+        <li>Inventory, Sales &amp; Accounts Management Systems</li>
+        <li>Microsoft Office &amp; Computer Applications</li>
+        <li>Internet &amp; Data Handling</li>
+        <li>Team Coordination and Problem Solving</li>
+      </ul>
+    </div>
+  </section>
+   <section> 
+    <div>
+      <div class="section-title">Specializations</div>
+      <ul class="plain-list">
+        <li>Web technologies &amp; information assurance</li>
+        <li>Accounts and enterprise software development</li>
+        <li>Video editing and system fine-tuning</li>
+        <li>IT systems engineering and process improvement</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Language & Achievements -->
+  <section>
+    <div>
+      <div class="section-title">Language Proficiency</div>
+      <ul class="plain-list">
+        <li><b>Bengali:</b> Native (excellent reading, writing, speaking)</li>
+        <li><b>English:</b> Moderate proficiency (reading, writing, speaking)</li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div>
+      <div class="section-title">Achievements &amp; Interests</div>
+      <ul class="plain-list">
+        <li>Organized student programs and photography exhibitions.</li>
+        <li>Strong interest in traveling, photography, football, cricket, and technology exploration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Key Attributes -->
+  <section>
+    <div class="section-title">Key Attributes</div>
+    <ul class="plain-list">
+      <li>Strong leadership and managerial capability.</li>
+      <li>Goal-oriented, hardworking, and resilient under pressure.</li>
+      <li>Skilled in planning, organizing, and executing projects.</li>
+      <li>Effective communicator with diverse teams.</li>
+    </ul>
+  </section>
+
+  <!-- Personal Details -->
+  <section>
+    <div class="section-title">Personal Details</div>
+    <dl class="personal-grid">
+      <dt>Date of Birth</dt><dd>May 14, 1998</dd>
+      <dt>Religion</dt><dd>Islam</dd>
+      <dt>Marital Status</dt><dd>Married</dd>
+      <dt>Blood Group</dt><dd>O (+) Positive</dd>
+      <dt>Permanent Address</dt><dd>Fulbari Uttar Para, Bogra Sadar, Bogra-5800.</dd>
+    </dl>
+  </section>
+  <img src="">
+
+  <!-- Signature -->
+  <div class="signature">
+    <div class="sig-name"><img src="Kouser Sing.png"></div>
+
+    <div class="sig-line"></div>
+    <div class="sig-label">Signature</div>
+  </div>
+
+</div>
+</body>
+</html>
